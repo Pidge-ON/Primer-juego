@@ -3,9 +3,10 @@ extends Node2D
 var laser_scene: PackedScene = preload("res://scenes/Proyectiles/laser.tscn")
 var granade_scene: PackedScene = preload("res://scenes/Proyectiles/granade.tscn")
 
-func _on_gate_player_entered_gate(body) -> void:
-	print("player has entered gate") 
-	print(body)
+func _on_gate_player_entered_gate(_body) -> void:
+		var tween = create_tween()
+		tween.tween_property($Player,"speed",0,0.4)
+	
 
 
 func _on_player_laser(pos, direction):
@@ -21,3 +22,13 @@ func _on_player_granade(pos, direction):
 	granade.position = pos
 	granade.linear_velocity = direction * 200
 	$Proyectiles.add_child(granade)
+
+
+func _on_house_player_entered() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D,"zoom",Vector2(1,1),1)
+
+
+func _on_house_player_exited() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D,"zoom",Vector2(0.6,0.6),2).set_trans(Tween.TRANS_LINEAR)
