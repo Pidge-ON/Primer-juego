@@ -55,13 +55,13 @@ one_shot = true
 [node name="LaserStartPositions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(94, 11)
+position = Vector2(95, 9)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
 position = Vector2(100, 14)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(94, 20)
+position = Vector2(95, 20)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(101, 14)
@@ -73,6 +73,7 @@ one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_xt4di")
+metadata/_edit_lock_ = true
 
 [connection signal="laser" from="." to="." method="_on_laser"]
 [connection signal="timeout" from="LaserReloadTimer" to="." method="_on_timer_timeout"]
