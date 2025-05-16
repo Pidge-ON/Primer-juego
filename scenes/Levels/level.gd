@@ -7,7 +7,9 @@ var granade_scene: PackedScene = preload("res://scenes/Proyectiles/granade.tscn"
 
 
 func _on_player_laser(pos, direction):
+	print("LASER_EMIT_SIGNAL: INSTANTIATING LASER")
 	var laser = laser_scene.instantiate() as Area2D
+	print (laser)
 	laser.position = pos
 	laser.rotation_degrees =rad_to_deg(direction.angle()) + 90
 	laser.direction = direction

@@ -10,6 +10,7 @@ func _process(delta):
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
+	print("I hit: ", body.name)
 	if "hit" in body:
 		body.hit()
 	queue_free()
