@@ -14,11 +14,13 @@ func _on_player_laser(pos, direction):
 	$Proyectiles.add_child(laser)
 
 
+
 func _on_player_granade(pos, direction):
 	var granade = granade_scene.instantiate() as RigidBody2D
 	granade.position = pos
 	granade.linear_velocity = direction * 200
-	$Proyectiles.add_child(granade)
+	$Proyectiles.add_child(granade) 
+
 
 
 func _on_house_player_entered() -> void:
